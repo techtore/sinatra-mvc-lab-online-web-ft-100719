@@ -14,7 +14,6 @@ class PigLatinizer
       "#{rest}#{start}ay"
     else
       "#{rest}way"
-       binding.pry
     end
   end
 end
