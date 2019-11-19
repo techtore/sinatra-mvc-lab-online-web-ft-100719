@@ -1,7 +1,7 @@
 class PigLatinizer
   
   def piglatinize(string)
-      a = string.split(" ")
+      a = string.split(" ") 
       b = a.map {|word| piglatinize_word(word)}
       b.join(" ")
   end
@@ -9,12 +9,12 @@ class PigLatinizer
   def piglatinize_word(word)
     parts_of_word = word.split(/([^aeiouAEIOU]*)([aeiouAEIOU]*)(.*)/)
    
-    start = parts_of_word[1] # consonant cluster
-    rest = parts_of_word[2] + (parts_of_word[3] || "")
-    if start.length>0
-      "#{rest}#{start}ay"
+    part_1 = parts_of_word[1] # consonant cluster
+    part_2 = parts_of_word[2] + (parts_of_word[3] || "")
+    if part_1.length>0
+      "#{part_2}#{part_1}ay"
     else
-      "#{rest}way"
+      "#{part_2}way"
     end
   end
 end
