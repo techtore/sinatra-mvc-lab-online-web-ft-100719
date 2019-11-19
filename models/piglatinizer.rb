@@ -1,11 +1,12 @@
 class PigLatinizer
   
-  def to_pig_latin(phrase)
-    words = phrase.split(" ")
-    words.collect {|w| piglatinize(w)}.join(" ")
+  def piglatinize(string)
+      a = string.split(" ")
+      b = a.map {|word| piglatinize_word(word)}
+      b.join(" ")
   end
 
-  def piglatinize(word)
+  def piglatinize_word(word)
     parts_of_word = word.split(/([^aeiouAEIOU]*)([aeiouAEIOU]*)(.*)/)
    
     start = parts_of_word[1] # consonant cluster
