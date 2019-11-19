@@ -5,21 +5,10 @@ class PigLatinizer
     @words = words
   end
   
-  def piglatinize(words) 
-  
-    alpha = ('a'..'z').to_a
-    vowels = %w[a e i o u]
-    consonants = alpha - vowels
-  
-    if vowels.include?(str[0])
-      words + 'ay'
-    elsif consonants.include?(words[0]) && consonants.include?(words[1])
-      words[2..-1] + words[0..1] + 'ay'
-    elsif consonants.include?(words[0])
-      words[1..-1] + words[0] + 'ay'
-    else
-    words # return unchanged
-    end
+  def piglatinize(string)
+    a = string.split(" ")
+    b = a.map {|word| piglatinize_word(word)}
+    b.join(" ")
   end
 end
     
