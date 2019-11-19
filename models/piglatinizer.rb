@@ -23,7 +23,3 @@ class PigLatinizer
     end# piglatinize word that starts with a consonant
   end
 end
-    
-  # if starts with consonant take first letter and add to end of word + ay
-  # if first 2 letters are consonants take them and add to end of word + ay
-  # if first letter == vowel + "way" to end
